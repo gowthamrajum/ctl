@@ -1,0 +1,64 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Start New Process Form</h1>
+    <form class="form-horizontal"
+    role="form">
+
+<div class="control-group">
+  <label class="control-label">Creditor</label>
+  <div class="controls">
+    <input cam-variable-name="creditor"
+           type="text"
+           name="creditor"
+           [(ngModel)]="model.creditor"
+           readonly="true"
+           class="form-control" />
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Amount</label>
+  <div class="controls">
+    <input cam-variable-name="amount"
+           type="text"
+           name="amount"
+           [(ngModel)]="model.amount"
+           readonly="true"
+           class="form-control" />
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Invoice Number</label>
+  <div class="controls">
+    <input cam-variable-name="invoiceNumber"
+           type="text"
+           name="invoiceNumber"
+           readonly="true"
+           [(ngModel)]="model.invoiceNumber"
+           class="form-control" />
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Reviewer: </label>
+  <div class="controls">
+    <select cam-variable-name="reviewer"
+            cam-variable-type="String"
+            type="text"
+            name="reviewer"
+            class="form-control"
+            [(ngModel)]="model.reviewer"
+            required>
+      <option></option>
+      <option value="demo">Demo</option>
+      <option value="john">John</option>
+      <option value="peter">Peter</option>
+      <option value="mary">Mary</option>
+    </select>
+    <p>Who should review this invoice?</p>
+  </div>
+</div>
+</form>
+  </div>
+  <div [hidden]="!submitted">
+    <p>Process has been started.</p>
+  </div>
+</div>
